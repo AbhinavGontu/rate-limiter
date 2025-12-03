@@ -10,7 +10,7 @@ export class TokenBucket {
     /**
      * Defines the rate limit rules for different tiers
      */
-    private static rules = {
+    private static readonly DEFAULT_RULES = {
         'free': { capacity: 10, fillRate: 1 },       // 10 tokens max, 1 token/sec
         'pro': { capacity: 100, fillRate: 10 },      // 100 tokens max, 10 tokens/sec
         'enterprise': { capacity: 1000, fillRate: 100 } // 1000 tokens max, 100 tokens/sec
