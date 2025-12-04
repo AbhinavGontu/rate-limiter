@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest",
+    "lint": "eslint src --ext .ts",
     "start": "ts-node src/server.ts"
   },
   "keywords": [],
