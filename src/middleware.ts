@@ -13,7 +13,8 @@ if (process.env.USE_MOCK_REDIS === 'true') {
     redis = new Redis({
         host: process.env.REDIS_HOST || 'localhost',
         port: parseInt(process.env.REDIS_PORT || '6379'),
-        lazyConnect: true // Don't connect immediately to allow mocking in tests
+        lazyConnect: true,
+    retryStrategy: (times) => Math.min(times * 50, 2000) // Don't connect immediately to allow mocking in tests
     });
 }
 
