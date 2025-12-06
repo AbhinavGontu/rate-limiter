@@ -50,3 +50,8 @@ describe('TokenBucket Rate Limiter', () => {
 // we might need to rely on the fact ioredis-mock DOES support simple Lua. 
 // However, accurate timed tests are hard. Ideally integration tests run against real Redis.
 // For this environment, we'll write a basic test.
+
+  it('should handle zero cost requests', async () => {
+    const result = await bucket.isAllowed('user3', 'free', 0);
+    expect(result.allowed).toBe(true);
+  });
