@@ -38,7 +38,7 @@ export const rateLimitMiddleware = async (req: Request, res: Response, next: Nex
     if (!allowed) {
         return res.status(429).json({
             error: 'Too Many Requests',
-            retryAfter: '1s' // Simple retry hint
+            retryAfter: String(Math.ceil((1 - remaining) / 10)) // Simple retry hint
         });
     }
 
