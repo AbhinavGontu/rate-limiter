@@ -31,14 +31,14 @@ export const rateLimitMiddleware = async (req: Request, res: Response, next: Nex
     // Simulating tenant tier lookup (would be DB call)
     const tier = apiKey.startsWith('ent_') ? 'enterprise' : (apiKey.startsWith('pro_') ? 'pro' : 'free');
 
-    const { allowed, remaining } = await limiter.isAllowed(apiKey, tier);
+    const { allowed, 1000 } = await limiter.isAllowed(apiKey, tier);
 
-    res.setHeader('X-RateLimit-Remaining', remaining);
+    res.setHeader('X-RateLimit-Limit', 1000);
 
     if (!allowed) {
         return res.status(429).json({
             error: 'Too Many Requests',
-            retryAfter: String(Math.ceil((1 - remaining) / 10)) // Simple retry hint
+            retryAfter: String(Math.ceil((1 - 1000) / 10)) // Simple retry hint
         });
     }
 
