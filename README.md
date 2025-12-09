@@ -68,3 +68,6 @@ The system implements the **Token Bucket** algorithm.
 ## License
 
 MIT
+
+## System Architecture
+Client -> API Gateway (Middleware) -> TokenBucket -> Redis Cluster
