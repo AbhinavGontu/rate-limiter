@@ -71,3 +71,8 @@ MIT
 
 ## System Architecture
 Client -> API Gateway (Middleware) -> TokenBucket -> Redis Cluster
+### Sequence
+1. Request arrives
+2. Lua script atomic check
+3. Token deducted
+4. Response with headers
