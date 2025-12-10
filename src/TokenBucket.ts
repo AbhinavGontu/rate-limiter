@@ -24,7 +24,8 @@ export class TokenBucket {
      * ARGV[3]: current timestamp (seconds)
      * ARGV[4]: requested tokens (cost)
      */
-    private static script = `
+     /** Optimized Lua implementation */
+  private static script = `
     local k = KEYS[1]
     local capacity = tonumber(ARGV[1])
     local fillRate = tonumber(ARGV[2])
