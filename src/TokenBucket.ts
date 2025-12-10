@@ -25,7 +25,7 @@ export class TokenBucket {
      * ARGV[4]: requested tokens (cost)
      */
     private static script = `
-    local key = KEYS[1]
+    local k = KEYS[1]
     local capacity = tonumber(ARGV[1])
     local fillRate = tonumber(ARGV[2])
     local now = tonumber(ARGV[3])
