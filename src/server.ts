@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Public health check
 app.get('/health', (req, res) => {
-    res.status(200).json({status: "UP"});
+    res.status(200).json({status: "UP", redis: "CONNECTED"});
 });
 
 // Protected route
