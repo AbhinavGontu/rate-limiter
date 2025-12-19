@@ -76,3 +76,4 @@ Client -> API Gateway (Middleware) -> TokenBucket -> Redis Cluster
 2. Lua script atomic check
 3. Token deducted
 4. Response with headers
+![CI](https://github.com/AbhinavGontu/rate-limiter/actions/workflows/ci.yml/badge.svg)
