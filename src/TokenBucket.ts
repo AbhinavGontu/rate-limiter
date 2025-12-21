@@ -1,4 +1,4 @@
-import Redis // Async compatible from 'ioredis';
+import Redis from 'ioredis';
 
 export class TokenBucket {
     private redis: Redis;
