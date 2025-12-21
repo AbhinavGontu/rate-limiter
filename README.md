@@ -78,3 +78,6 @@ Client -> API Gateway (Middleware) -> TokenBucket -> Redis Cluster
 4. Response with headers
 ![CI](https://github.com/AbhinavGontu/rate-limiter/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+---
+Built with ❤️ by Abhinav Gontu
